@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style >
+			*{
+						margin: 0;
+						padding: 0;
+					}
+					
+			.box1{
+			height: 40px;
+			width: 50px;
+			background-color: #55ffff;
+			border-radius: 10px;
+			transition:width 1s;
+			}
+			.box2{
+				height: 40px;
+				width: 50px;		
+				background-color:#ff0000;
+				border-radius: 10px;
+				transition:width 1s;
+			}
+		 img{
+			width: 30px;
+			height: 30px;
+			padding-top: 6px;
+			padding-left: 6px;
+			
+		} 
+			.text{
+				color: black;
+				display: none;
+				line-height: 30px;
+				margin-left: 10px;
+				font-family:STXingkai;
+				font-size: 24px;
+				padding-top: 6px;
+				position:absolute;
+			}
+			 .i{
+				display: inline-block;
+				/* line-height: 30px; */
+			} 
+			div:hover{
+				width: 150px;
+			}
+			div:hover .text{   /* 空格不能省 */
+				display: inline-block;
+				white-space: normal;//处理空白,防止右溢出
+			}
+			div:hover .i{
+				float: right;
+				line-height: 30px;
+			} 
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+		<p>	<span class="text">访客 visitor</span></p>
+			<span class="i"> <img src="4.1.png"/> </span>
+		</div>
+		<div class="box2">
+			<span class="text">学生 student</span>
+			<span class="i"> <img src="4.2.png"/> </span> 
+		</div>
+	</body>
+</html
