@@ -1,0 +1,59 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>简易电子钟的设计与实现</title>
+<link rel="stylesheet" type='text/html'  href="shi zhong.html">
+<style>
+#clock{
+    width:800px;
+    font-size:40px;
+    font-weight:bold;
+    color:rgb(74, 140, 145);
+    text-align:center;
+    /* 水平居中 */
+	align-items: center;
+    margin-left:300px;
+}
+div{
+	width:800px;
+	height: 700px;
+	display: flex;
+	/* 水平居中  */
+	/* justify-content: center; */ */
+		/*垂直居中  */
+	vertical-align: middle;
+	/* 水平居中 */
+	/* align-items: center; */
+	} 
+</style>
+<script>
+function showTime(clock){
+    var now = new Date();
+    var year = now.getFullYear();
+    var month= now.getMonth();
+    var day = now.getDate();
+    var hour = now.getHours();
+    var minu = now.getMinutes();
+    // 返回秒数
+    var second = now.getSeconds();
+    if(hour<10) hour="0"+hour;//以确保0~9时也显示成两位数
+			if(minu<10) mouth="0"+minu;//以确保0~9分钟也显示成两位数
+			if(second<10) second="0"+second;//以确保0~9秒也显示成两位数
+    month = month+1;
+    var arr_work = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+    // 返回一周的星期几
+    var week = arr_work[ now.getDay()];
+    var time = year+"年"+month+"月"+day+"日 "+ week+" "+hour+":"+minu+":"+second;
+    clock.innerHTML="当前时间: "+time;
+}
+window.onload = function(){
+    var clock = document.getElementById("clock");
+    window.setInterval("showTime(clock)",1000);
+}
+</script>
+</head>
+<body>
+<div id ="clock"></div>
+</body>
+</html>
